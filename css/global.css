@@ -7,13 +7,22 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Ensure the fluid container is not more than 900px in width */
+/* Ensure the fluid container is not more than set width */
 @media screen and (min-width: 900px) {
     .container-fluid {
         width: 900px;
         margin: 0 auto;
     }
 }
+
+/* Ensure the fluid container is not more than set width */
+@media screen and (min-width: 1200px) {
+    .container-fluid.container-fluid-large {
+        width: 1200px;
+        margin: 0 auto;
+    }
+}
+
 
 @media screen and (min-width: 576px) { /* Add extra grid column padding on the right */
     .col-extra-padding-right {
@@ -33,5 +42,9 @@ h1 {
     border-color: #ced4da;
     box-shadow: none;
     outline: none;
+}
+
+.oi {
+    vertical-align: middle; /* Ensure the iconic font icons are vertically inline with text  */
 }
 
