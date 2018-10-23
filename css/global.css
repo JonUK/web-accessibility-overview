@@ -16,13 +16,13 @@ h1 {
 }
 
 @media screen and (min-width: 576px) { /* Add extra grid column padding on the right */
-    .col-sm.col-sm-extra-padding-right {
+    .col-extra-padding-right {
         padding-right: 40px;
     }
 }
 
 @media screen and (min-width: 576px) {  /* Add extra grid column padding on the left */
-    .col-sm.col-sm-extra-padding-left {
+    .col-extra-padding-left {
         padding-left: 40px;
     }
 }

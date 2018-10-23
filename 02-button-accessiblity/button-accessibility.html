@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Button Accessibility</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/global.css">
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function(){
+
+            const buttonAccessible = document.getElementById('buttonAccessible');
+            const buttonInaccessible = document.getElementById('buttonInaccessible');
+
+            buttonAccessible.addEventListener('click', event => {
+                alert('The accessible button was clicked');
+                event.preventDefault();
+            });
+
+            buttonInaccessible.addEventListener('click', event => {
+                alert('The inaccessible button was clicked');
+                event.preventDefault();
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <h1>Button Accessibility</h1>
+
+    <div class="row">
+
+        <div class="col-sm-6 col-extra-padding-right">
+
+            <h2>Accessible Button</h2>
+
+            <button id="buttonAccessible" class="btn btn-primary">Click me!</button>
+
+            <pre class="pt-3"><code>&lt;button class=&quot;btn btn-primary&quot;&gt;Click me!&lt;/button&gt;</code></pre>
+
+            <h3 class="pt-3">Characteristics</h3>
+
+            <ul>
+                <li>Has semantic meaning</li>
+                <li>Focusable</li>
+                <li>Reacts to space bar and enter key presses</li>
+            </ul>
+
+        </div> <!-- /class="col-sm" -->
+
+        <div class="col-sm-6 col-extra-padding-left">
+
+            <h2>Inaccessible Button</h2>
+
+            <!--
+            Steps to make the fake button accessible:
+             - Use ARIA role to identify the element as a button (role="button")
+             - Make the button focusable (tabindex="0")
+             - Add space bar and enter key handling
+            -->
+            <span id="buttonInaccessible" class="btn btn-primary">Click me!</span>
+
+
+            <pre class="pt-3"><code>&lt;span class="btn btn-primary"&gt;Click me!&lt;/span&gt;</code></pre>
+
+            <h3 class="pt-3">Characteristics</h3>
+
+            <ul>
+                <li>No semantic meaning</li>
+                <li>Not focusable</li>
+                <li>Cannot be interacted with via keyboard</li>
+            </ul>
+
+        </div> <!-- /class="col-sm" -->
+
+    </div> <!-- /class="row" -->
+
+    <div class="row pt-5">
+        <div class="col">
+
+            <h2>Further Reading</h2>
+
+            <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#button" target="_blank">W3C WAI-ARIA Authoring Practices 1.1 - Button</a>
+            <br />
+
+            <a href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/button/button.html" target="_blank">W3C WAI-ARIA - Button examples</a>
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
