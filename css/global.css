@@ -44,6 +44,10 @@ h1 {
     outline: none;
 }
 
+.card-header-click-cursor {
+    cursor: pointer;
+}
+
 .oi {
     vertical-align: middle; /* Ensure the iconic font icons are vertically inline with text  */
 }

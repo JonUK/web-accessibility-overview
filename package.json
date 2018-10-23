@@ -1,0 +1,22 @@
+{
+  "name": "web-accessibility-overview",
+  "version": "1.0.0",
+  "description": "Code examples to provide an overview of web accessibility",
+  "devDependencies": {
+    "express": "^4.16.3",
+    "serve-index": "^1.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonUK/web-accessibility-overview.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonUK/web-accessibility-overview/issues"
+  },
+  "homepage": "https://github.com/JonUK/web-accessibility-overview#readme"
+}
