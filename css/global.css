@@ -7,9 +7,31 @@ h1 {
     margin-bottom: 20px;
 }
 
-@media screen and (min-width: 700px) {
+/* Ensure the fluid container is not more than 900px in width */
+@media screen and (min-width: 900px) {
     .container-fluid {
-        width: 700px;
+        width: 900px;
         margin: 0 auto;
     }
 }
+
+@media screen and (min-width: 576px) { /* Add extra grid column padding on the right */
+    .col-sm.col-sm-extra-padding-right {
+        padding-right: 40px;
+    }
+}
+
+@media screen and (min-width: 576px) {  /* Add extra grid column padding on the left */
+    .col-sm.col-sm-extra-padding-left {
+        padding-left: 40px;
+    }
+}
+
+/* Remove the Bootstrap 4 custom focus border and the standard outline for all child inputs */
+.remove-focus input:focus,
+.remove-focus textarea:focus {
+    border-color: #ced4da;
+    box-shadow: none;
+    outline: none;
+}
+
