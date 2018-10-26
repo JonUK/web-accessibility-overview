@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>ARIA & Markup Examples</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.css" integrity="sha256-/ofE7jXpVyB027p6k0v8fLtoTVWhzAiFmoBG1bpBcIo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.css" integrity="sha256-/ofE7jXpVyB027p6k0v8fLtoTVWhzAiFmoBG1bpBcIo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/global.css">
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <h1>ARIA & Markup Examples</h1>
+
+    <div class="row">
+
+        <div class="col pb-4">
+
+            <h2>aria-hidden Attribute</h2>
+
+            <p>This attribute will hide an element (or group of elements) to screen readers. It has however no effect on the display.</p>
+
+            <button class="btn btn-primary">
+                <span class="oi" data-glyph="eye" aria-hidden="true"></span>
+                <span>You can see my icon</span>
+            </button>
+
+        </div> <!-- /class="col-sm" -->
+
+    </div> <!-- /class="row" -->
+
+
+    <div class="row">
+
+        <div class="col pb-4">
+
+            <h2>Bootstrap sr-only Class</h2>
+            <p>Content which should be visually hidden, but remain accessible to assistive technologies such as screen readers, can be styled using the .sr-only class. This can be useful in situations where additional visual information or cues (such as meaning denoted through the use of color) need to also be conveyed to non-visual users.</p>
+
+            <button class="btn btn-primary">
+                I am
+                <span aria-hidden="true">a</span>
+                <span class="sr-only">not a very</span>
+                nice person
+            </button>
+
+        </div> <!-- /class="col-sm" -->
+
+    </div> <!-- /class="row" -->
+
+
+    <div class="row">
+
+        <div class="col">
+
+            <h2>Tabindex Attribute</h2>
+
+            <ul>
+                <li class="pb-4">
+                    <code>tabindex="-1"</code>
+                    <p>A negative value (usually "-1") means that the element should be focusable, but should not be reachable via sequential keyboard navigation. It's mostly useful to create accessible widgets with JavaScript.</p>
+                    <span tabindex="-1" class="highlight-border">tabindex="1"</span>
+                </li>
+                <li class="pb-4">
+                    <code>tabindex="0"</code>
+                    <p>Means that the element should be focusable in sequential keyboard navigation, but its order is defined by the document's source order.</p>
+                    <span tabindex="0" class="highlight-border">tabindex="0"</span>
+                </li>
+                <li class="pb-4">
+                    <code>tabindex="5"</code>
+                    <p>
+                        A positive value means the element should be focusable in sequential keyboard navigation, with its order defined by the value of the number.
+                        <strong>This is not recommended.</strong>
+                    </p>
+                    <span tabindex="5" class="highlight-border">tabindex="5"</span>
+                </li>
+            </ul>
+
+        </div> <!-- /class="col-sm" -->
+
+    </div> <!-- /class="row" -->
+
+
+
+    <div class="row">
+
+        <div class="col">
+
+            <h2>Role Attribute</h2>
+            <p>Supplements HTML so that interactions and widgets commonly used in applications can be passed to Assistive Technologies when there is not otherwise a mechanism.</p>
+
+            <ul>
+                <li class="pb-4">
+                    <code>role="button"</code>
+                    <p>The button role should be used for clickable elements that trigger a response when activated by the user.</p>
+                    <span tabindex="0" role="button" class="highlight-border">Save Changes</span>
+                </li>
+            </ul>
+            <ul>
+                <li class="pb-4">
+                    <code>role="region"</code>
+                    <p>A region landmark is a perceivable section containing content that is relevant to a specific, author-specified purpose and sufficiently important that users will likely want to be able to navigate to the section easily and to have it listed in a summary of the page.</p>
+                    <span tabindex="0" role="region" aria-label="Upload Area" class="highlight-border">
+                        File upload 1<br />
+                        File upload 2<br />
+                        File upload 2
+                    </span>
+                </li>
+            </ul>
+
+        </div> <!-- /class="col-sm" -->
+
+    </div> <!-- /class="row" -->
+
+
+    <div style="height: 80px">&nbsp;</div> <!-- Accommodate ChromeVox being open -->
+
+
+</div>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

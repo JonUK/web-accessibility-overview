@@ -52,3 +52,9 @@ h1 {
     vertical-align: middle; /* Ensure the iconic font icons are vertically inline with text  */
 }
 
+.highlight-border {
+    display: inline-block;
+    border: 2px solid #CCC;
+    padding: 4px 8px;
+}
+
