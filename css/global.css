@@ -54,7 +54,15 @@ h1 {
 
 .highlight-border {
     display: inline-block;
-    border: 2px solid #CCC;
-    padding: 4px 8px;
+    vertical-align: middle;
+    margin: 1px; /* Take into account the extra pixel border we'll add on focus */
+    border: 1px dashed #AAA;
+    padding: 5px 8px;
 }
+
+.highlight-border:focus {
+    margin: 0;
+    border: 2px solid #000;
+}
+
 

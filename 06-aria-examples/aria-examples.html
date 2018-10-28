@@ -13,6 +13,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.css" integrity="sha256-/ofE7jXpVyB027p6k0v8fLtoTVWhzAiFmoBG1bpBcIo=" crossorigin="anonymous" />
     <link rel="stylesheet" href="../css/global.css">
 
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const tabindexNegativeElement = document.getElementById('tabindexNegative');
+            const tabindexNegativeFocusButton = document.getElementById('tabindexNegativeFocusButton');
+
+            tabindexNegativeFocusButton.addEventListener('click', event => {
+                tabindexNegativeElement.focus();
+            });
+
+
+            const statusMessageButton = document.getElementById('statusMessageButton');
+            const statusMessageElement = document.getElementById('statusMessage');
+
+            statusMessageButton.addEventListener('click', event => {
+                statusMessageElement.innerText = 'Uploading 5 files';
+                event.preventDefault();
+            });
+
+            const alertMessageButton = document.getElementById('alertMessageButton');
+            const alertMessageElement = document.getElementById('alertMessage');
+
+            alertMessageButton.addEventListener('click', event => {
+                alertMessageElement.innerText = 'The file upload has failed';
+                event.preventDefault();
+            });
+
+
+        });
+
+    </script>
+
 </head>
 <body>
 
@@ -45,6 +78,18 @@
             <h2>Bootstrap sr-only Class</h2>
             <p>Content which should be visually hidden, but remain accessible to assistive technologies such as screen readers, can be styled using the .sr-only class. This can be useful in situations where additional visual information or cues (such as meaning denoted through the use of color) need to also be conveyed to non-visual users.</p>
 
+            <code><pre>.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}</pre></code>
+
+
             <button class="btn btn-primary">
                 I am
                 <span aria-hidden="true">a</span>
@@ -67,7 +112,10 @@
                 <li class="pb-4">
                     <code>tabindex="-1"</code>
                     <p>A negative value (usually "-1") means that the element should be focusable, but should not be reachable via sequential keyboard navigation. It's mostly useful to create accessible widgets with JavaScript.</p>
-                    <span tabindex="-1" class="highlight-border">tabindex="1"</span>
+
+                    <span id="tabindexNegative" tabindex="-1" class="highlight-border">tabindex="-1"</span>
+
+                    <button id="tabindexNegativeFocusButton" class="btn btn-outline-primary ml-2">Set focus programmatically</button>
                 </li>
                 <li class="pb-4">
                     <code>tabindex="0"</code>
@@ -77,7 +125,7 @@
                 <li class="pb-4">
                     <code>tabindex="5"</code>
                     <p>
-                        A positive value means the element should be focusable in sequential keyboard navigation, with its order defined by the value of the number.
+                        A positive value means the element should be focusable in sequential keyboard navigation, with it's order defined by the value of the number.
                         <strong>This is not recommended.</strong>
                     </p>
                     <span tabindex="5" class="highlight-border">tabindex="5"</span>
@@ -87,7 +135,6 @@
         </div> <!-- /class="col-sm" -->
 
     </div> <!-- /class="row" -->
-
 
 
     <div class="row">
@@ -121,7 +168,29 @@
     </div> <!-- /class="row" -->
 
 
-    <div style="height: 80px">&nbsp;</div> <!-- Accommodate ChromeVox being open -->
+    <div class="row">
+
+        <div class="col">
+
+            <h2>role="status", role="alert" & aria-live</h2>
+            <p>Defines a region on the page (e.g. a div or a section) can be marked as “live”. This allows assistive technology (e.g. screen-readers) to “announce” updates, even when the user’s focus (a.k.a. focus ring) is outside that region.</p>
+
+            <p>
+                <button id="statusMessageButton" class="btn btn-outline-primary mr-2">Change status programmatically</button>
+                <span id="statusMessage" role="status" aria-live="polite" class="highlight-border">&nbsp;</span>
+            </p>
+
+            <p>
+                <button id="alertMessageButton" class="btn btn-outline-primary mr-2">Set alert programmatically</button>
+                <span id="alertMessage" role="alert" aria-live="assertive" class="highlight-border">&nbsp;</span>
+            </p>
+
+        </div> <!-- /class="col-sm" -->
+
+    </div> <!-- /class="row" -->
+
+
+    <div style="height: 120px">&nbsp;</div> <!-- Accommodate ChromeVox being open -->
 
 
 </div>

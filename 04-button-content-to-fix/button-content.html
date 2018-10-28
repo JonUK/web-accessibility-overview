@@ -26,7 +26,11 @@
             <h2>Inaccessible Buttons</h2>
 
             <button class="btn btn-primary">
+
+                <!-- TODO: Add screen reader only text -->
+                <!-- TODO: Hide the "font icon" unicode character from screen readers -->
                 <span class="oi" data-glyph="media-play"></span>
+
             </button>
 
             <br />
@@ -34,6 +38,10 @@
 
 
             <button class="btn btn-primary">
+
+                <!-- TODO: Add screen reader only text -->
+                <!-- TODO: Hide the "font icon" unicode character and responsively displayed text from screen readers -->
+
                 <span class="oi" data-glyph="data-transfer-download"></span>
                 <span class="d-none d-md-inline">I am responsive</span>
             </button>
@@ -42,11 +50,64 @@
             <br />
 
 
+            <!-- TODO: Avoid disabling buttons where possible -->
             <button disabled class="btn btn-primary">I am disabled</button>
 
         </div> <!-- /class="col-sm" -->
 
     </div> <!-- /class="row" -->
+
+    <div class="row mt-5">
+
+        <div class="col">
+
+            <h2>Multiple Buttons With Same Content</h2>
+
+            <div class="row">
+
+
+                <div class="col-6">
+
+                    <div class="card">
+                        <div class="card-body" style="min-height: 160px;">
+                            <h3 id="productAurora" class="card-title">AURORA</h3>
+                            <p class="card-text">Meet the dual graphics-ready Alienware Aurora featuring up to a 6-core 8th Gen Intel® Core™ i7 processor, driven by 20 years of gamer feedback and designed for virtual reality.</p>
+                        </div>
+                        <div class="card-body text-center">
+
+                            <!-- TODO: Link the button to the product heading with aria-describedby -->
+                            <button class="btn btn-lg btn-outline-primary">Build yours</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-6">
+
+                    <div class="card">
+                        <div class="card-body" style="min-height: 160px;">
+                            <h3 id="productArea51" class="card-title">ALIENWARE AREA-51</h3>
+                            <p class="card-text">Unstoppable gaming desktop with a powerhouse CPU and support for dual graphics cards. Featuring a triad chassis and liquid cooling.</p>
+                        </div>
+                        <div class="card-body text-center">
+
+                            <!-- TODO: Link the button to the product heading with aria-describedby -->
+                            <button class="btn btn-lg btn-outline-primary">Build yours</button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div> <!-- /class="row" -->
+
+
+    <div style="height: 80px">&nbsp;</div> <!-- Accommodate ChromeVox being open -->
 
 </div>
 
