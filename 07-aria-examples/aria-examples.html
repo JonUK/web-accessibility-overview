@@ -25,22 +25,19 @@
             });
 
 
-            const statusMessageButton = document.getElementById('statusMessageButton');
+            const fakeUploadButton = document.getElementById('fakeUploadButton');
             const statusMessageElement = document.getElementById('statusMessage');
-
-            statusMessageButton.addEventListener('click', event => {
-                statusMessageElement.innerText = 'Uploading 5 files';
-                event.preventDefault();
-            });
-
-            const alertMessageButton = document.getElementById('alertMessageButton');
             const alertMessageElement = document.getElementById('alertMessage');
 
-            alertMessageButton.addEventListener('click', event => {
-                alertMessageElement.innerText = 'The file upload has failed';
+            fakeUploadButton.addEventListener('click', event => {
+                statusMessageElement.innerText = 'Uploading file video.mp4';
+
+                setTimeout(() => {
+                    alertMessageElement.innerText = 'File upload failed';
+                }, 7000);
+
                 event.preventDefault();
             });
-
 
         });
 
@@ -49,7 +46,7 @@
 </head>
 <body>
 
-<div class="container-fluid">
+<main class="container-fluid">
 
     <h1>ARIA & Markup Examples</h1>
 
@@ -91,10 +88,9 @@
 
 
             <button class="btn btn-primary">
-                I am
-                <span aria-hidden="true">a</span>
-                <span class="sr-only">not a very</span>
-                nice person
+                <span aria-hidden="true">Cancel</span>
+                <span class="sr-only">Pay double for</span>
+                my membership
             </button>
 
         </div> <!-- /class="col-sm" -->
@@ -176,13 +172,15 @@
             <p>Defines a region on the page (e.g. a div or a section) can be marked as “live”. This allows assistive technology (e.g. screen-readers) to “announce” updates, even when the user’s focus (a.k.a. focus ring) is outside that region.</p>
 
             <p>
-                <button id="statusMessageButton" class="btn btn-outline-primary mr-2">Change status programmatically</button>
-                <span id="statusMessage" role="status" aria-live="polite" class="highlight-border">&nbsp;</span>
+                <button id="fakeUploadButton" class="btn btn-outline-primary mr-2">Start fake upload</button>
             </p>
 
             <p>
-                <button id="alertMessageButton" class="btn btn-outline-primary mr-2">Set alert programmatically</button>
-                <span id="alertMessage" role="alert" aria-live="assertive" class="highlight-border">&nbsp;</span>
+                Status: <span id="statusMessage" role="status" aria-live="polite" class="highlight-border">&nbsp;</span>
+            </p>
+
+            <p>
+                Alert: <span id="alertMessage" role="alert" aria-live="assertive" class="highlight-border">&nbsp;</span>
             </p>
 
         </div> <!-- /class="col-sm" -->
@@ -193,7 +191,7 @@
     <div style="height: 120px">&nbsp;</div> <!-- Accommodate ChromeVox being open -->
 
 
-</div>
+</main>
 
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
