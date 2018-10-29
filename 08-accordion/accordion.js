@@ -11,6 +11,7 @@ function initAccessibleAccordion(headingId, contentId) {
     const contentElement = document.getElementById(contentId);
 
     headingParentElement.setAttribute('role', 'heading'); // Set the heading parent to have the role of heading
+    headingParentElement.setAttribute('aria-level', '3'); // Set the heading level (equivalent of h3)
 
     headingElement.setAttribute('tabindex', '0'); // Allow the header to receive focus
     headingElement.setAttribute('role', 'button'); // The header acts as a button. Could actually use a button in header.
