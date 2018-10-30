@@ -60,9 +60,9 @@ function initAccessibleAccordion(headingId, contentId) {
 
 
 // Inaccessible accordion
-
-initInaccessibleAccordion('inaccessibleHeadingOne', 'inaccessibleContentOne');
-
+if (document.getElementById('inaccessibleHeadingOne')) {
+    initInaccessibleAccordion('inaccessibleHeadingOne', 'inaccessibleContentOne');
+}
 
 function initInaccessibleAccordion(headingId, contentId) {
 

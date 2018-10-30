@@ -143,6 +143,7 @@
                 <li class="pb-4">
                     <code>role="button"</code>
                     <p>The button role should be used for clickable elements that trigger a response when activated by the user.</p>
+                    <pre><code>&lt;span tabindex="0" role="button"&gt;Save Changes&lt;/span&gt;</code></pre>
                     <span tabindex="0" role="button" class="highlight-border">Save Changes</span>
                 </li>
             </ul>
@@ -150,6 +151,11 @@
                 <li class="pb-4">
                     <code>role="region"</code>
                     <p>A region landmark is a perceivable section containing content that is relevant to a specific, author-specified purpose and sufficiently important that users will likely want to be able to navigate to the section easily and to have it listed in a summary of the page.</p>
+
+                    <pre><code>&lt;span tabindex="0" role="region" aria-label="Upload Area"&gt;
+    ...
+&lt;/span&gt;</code></pre>
+
                     <span tabindex="0" role="region" aria-label="Upload Area" class="highlight-border">
                         File upload 1<br />
                         File upload 2<br />
@@ -175,10 +181,12 @@
             </p>
 
             <p>
+                <pre><code>&lt;span role="status" aria-live="polite"&gt;...&lt;/span&gt;</code></pre>
                 Status: <span id="statusMessage" role="status" aria-live="polite" class="highlight-border">&nbsp;</span>
             </p>
 
-            <p>
+            <p class="mt-4">
+                <pre><code>&lt;span role="alert" aria-live="assertive"&gt;...&lt;/span&gt;</code></pre>
                 Alert: <span id="alertMessage" role="alert" aria-live="assertive" class="highlight-border">&nbsp;</span>
             </p>
 
