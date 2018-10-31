@@ -1,5 +1,5 @@
 # web-accessibility-overview
-Code examples to provide an overview of web accessibility
+Code examples to provide an overview of common web accessibility issues and how they can be resolved.
 
 ## What do I do from here?
 
