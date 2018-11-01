@@ -86,16 +86,22 @@ h1 {
 }
 
 .toggle-link {
+    cursor: pointer;
     color: #161616;
-    margin-right: 5px;
+    /*margin-right: -4px;*/
+    padding: 2px;
     font-size: 1.35rem;
 }
 
-.toggle-link:hover {
-    border-bottom: 5px solid #C4DAEC;
-}
+.toggle-link:hover,
+ .toggle-link:focus {
+     border-bottom: 5px solid rgba(97, 159, 208, 0.6);
+ }
 
 .toggle-link.active,
+
 .toggle-link:hover.active{
     border-bottom: 5px solid #619fd0;
 }
+
+

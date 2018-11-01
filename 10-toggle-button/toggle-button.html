@@ -16,22 +16,49 @@
 
         document.addEventListener("DOMContentLoaded", function(){
 
-            const inaccessibleGridLink = document.getElementById('inaccessibleGrid');
-            const inaccessibleListLink = document.getElementById('inaccessibleList');
-            const inaccessibleMapLink = document.getElementById('inaccessibleMap');
+            // Inaccessible toggle links
+            const inAccessibleElementIds = ['inaccessibleGrid', 'inaccessibleList', 'inaccessibleMap'];
+            const inaccessibleElements = inAccessibleElementIds.map(id => document.getElementById(id));
 
-            inaccessibleGridLink.addEventListener('click', () => setActiveLink(inaccessibleGridLink));
-            inaccessibleListLink.addEventListener('click', () => setActiveLink(inaccessibleListLink));
-            inaccessibleMapLink.addEventListener('click', () => setActiveLink(inaccessibleMapLink));
+            inaccessibleElements.forEach(element => {
+                element.addEventListener('click', () => setInaccessibleActiveLink(element));
+            });
 
-            function setActiveLink(elementToMakeActive) {
-                inaccessibleGridLink.classList.remove('active');
-                inaccessibleListLink.classList.remove('active');
-                inaccessibleMapLink.classList.remove('active');
+            setInaccessibleActiveLink(inaccessibleElements[0]); // Initially set first item / grid view to active
 
+            function setInaccessibleActiveLink(elementToMakeActive) {
+                inaccessibleElements.forEach(element => element.classList.remove('active'));
                 elementToMakeActive.classList.add('active');
             }
 
+
+            // Accessible toggle elements
+            const accessibleElementIds = ['accessibleGrid', 'accessibleList', 'accessibleMap'];
+            const accessibleElements = accessibleElementIds.map(id => document.getElementById(id));
+
+            accessibleElements.forEach(element => {
+                element.addEventListener('click', () => setAccessibleActiveLink(element));
+
+                element.addEventListener('keypress', event => {
+                    if (event.key === " " || event.key === "Enter") {
+                        event.target.click();
+                        event.preventDefault(); // Pressing the space bar in some browsers will scroll the page
+                    }
+                });
+            });
+
+            setAccessibleActiveLink(accessibleElements[0]); // Initially set first item / grid view to active
+
+            function setAccessibleActiveLink(elementToMakeActive) {
+
+                accessibleElements.forEach(element => {
+                    element.classList.remove('active');
+                    element.setAttribute('aria-pressed', 'false');
+                });
+
+                elementToMakeActive.classList.add('active');
+                elementToMakeActive.setAttribute('aria-pressed', 'true');
+            }
         });
 
     </script>
@@ -49,9 +76,20 @@
 
             <h2>Accessible Toggle Buttons</h2>
 
-            <a id="accessibleGrid" href="#" class="toggle-link active"><span class="oi" data-glyph="grid-three-up"></span></a>
-            <a id="accessibleList" href="#" class="toggle-link"><span class="oi" data-glyph="list"></span></a>
-            <a id="accessibleMap" href="#" class="toggle-link"><span class="oi" data-glyph="globe"></span></a>
+            <span id="accessibleGrid" tabindex="0" role="button" class="toggle-link">
+                <span aria-hidden="true" class="oi" data-glyph="grid-three-up"></span>
+                <span class="sr-only">Grid view</span>
+            </span>
+
+            <span id="accessibleList" tabindex="0" role="button" class="toggle-link">
+                <span aria-hidden="true" class="oi" data-glyph="list"></span>
+                <span class="sr-only">List view</span>
+            </span>
+
+            <span id="accessibleMap" tabindex="0" role="button" class="toggle-link">
+                <span aria-hidden="true" class="oi" data-glyph="globe"></span>
+                <span class="sr-only">Map view</span>
+            </span>
 
         </div> <!-- /class="col-sm" -->
 
@@ -59,9 +97,17 @@
 
             <h2>Inaccessible Toggle Links</h2>
 
-            <a id="inaccessibleGrid" href="#" class="toggle-link active"><span class="oi" data-glyph="grid-three-up"></span></a>
-            <a id="inaccessibleList" href="#" class="toggle-link"><span class="oi" data-glyph="list"></span></a>
-            <a id="inaccessibleMap" href="#" class="toggle-link"><span class="oi" data-glyph="globe"></span></a>
+            <a id="inaccessibleGrid" href="#" class="toggle-link">
+                <span class="oi" data-glyph="grid-three-up"></span
+            ></a>
+
+            <a id="inaccessibleList" href="#" class="toggle-link">
+                <span class="oi" data-glyph="list"></span
+            ></a>
+
+            <a id="inaccessibleMap" href="#" class="toggle-link">
+                <span class="oi" data-glyph="globe"></span
+            ></a>
 
         </div> <!-- /class="col-sm" -->
 
