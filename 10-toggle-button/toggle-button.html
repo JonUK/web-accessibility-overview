@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Toggle Button</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.css" integrity="sha256-/ofE7jXpVyB027p6k0v8fLtoTVWhzAiFmoBG1bpBcIo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/global.css">
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function(){
+
+            const inaccessibleGridLink = document.getElementById('inaccessibleGrid');
+            const inaccessibleListLink = document.getElementById('inaccessibleList');
+            const inaccessibleMapLink = document.getElementById('inaccessibleMap');
+
+            inaccessibleGridLink.addEventListener('click', () => setActiveLink(inaccessibleGridLink));
+            inaccessibleListLink.addEventListener('click', () => setActiveLink(inaccessibleListLink));
+            inaccessibleMapLink.addEventListener('click', () => setActiveLink(inaccessibleMapLink));
+
+            function setActiveLink(elementToMakeActive) {
+                inaccessibleGridLink.classList.remove('active');
+                inaccessibleListLink.classList.remove('active');
+                inaccessibleMapLink.classList.remove('active');
+
+                elementToMakeActive.classList.add('active');
+            }
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+<main class="container-fluid">
+
+    <h1>Toggle Button</h1>
+
+    <div class="row">
+
+        <div class="col-sm-6 col-extra-padding-right">
+
+            <h2>Accessible Toggle Buttons</h2>
+
+            <a id="accessibleGrid" href="#" class="toggle-link active"><span class="oi" data-glyph="grid-three-up"></span></a>
+            <a id="accessibleList" href="#" class="toggle-link"><span class="oi" data-glyph="list"></span></a>
+            <a id="accessibleMap" href="#" class="toggle-link"><span class="oi" data-glyph="globe"></span></a>
+
+        </div> <!-- /class="col-sm" -->
+
+        <div class="col-sm-6 col-extra-padding-left">
+
+            <h2>Inaccessible Toggle Links</h2>
+
+            <a id="inaccessibleGrid" href="#" class="toggle-link active"><span class="oi" data-glyph="grid-three-up"></span></a>
+            <a id="inaccessibleList" href="#" class="toggle-link"><span class="oi" data-glyph="list"></span></a>
+            <a id="inaccessibleMap" href="#" class="toggle-link"><span class="oi" data-glyph="globe"></span></a>
+
+        </div> <!-- /class="col-sm" -->
+
+    </div> <!-- /class="row" -->
+
+    <div class="row pt-5">
+        <div class="col">
+
+            <h2>Further Reading</h2>
+
+            <a href="https://www.w3.org/TR/wai-aria-practices-1.1/#button" target="_blank">W3C WAI-ARIA Authoring Practices 1.1 - Button</a>
+            <br />
+
+            <a href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/button/button.html" target="_blank">W3C WAI-ARIA - Button examples</a>
+
+
+        </div>
+    </div>
+
+</main>
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
