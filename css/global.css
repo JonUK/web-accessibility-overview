@@ -85,12 +85,13 @@ h1 {
     outline: none;
 }
 
+
 .toggle-link {
     cursor: pointer;
     color: #161616;
-    /*margin-right: -4px;*/
-    padding: 2px;
-    font-size: 1.35rem;
+    margin-right: 0.3rem;
+    padding: 0.2rem;
+    font-size: 1.5rem;
 }
 
 .toggle-link:hover,
@@ -103,5 +104,3 @@ h1 {
 .toggle-link:hover.active{
     border-bottom: 5px solid #619fd0;
 }
-
-
