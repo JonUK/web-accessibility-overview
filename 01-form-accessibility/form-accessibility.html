@@ -49,20 +49,20 @@
 
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input id="name" type="text" class="form-control" required aria-required="true">
+                        <input id="name" name="name" type="text" class="form-control" required aria-required="true">
                     </div>
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input id="email" type="email" class="form-control" required aria-describedby="emailHelp" aria-required="true">
+                        <input id="email" name="email" type="email" class="form-control" required aria-describedby="emailHelp" aria-required="true">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input id="password" type="password" class="form-control" required aria-describedby="passwordHelp" aria-required="true">
+                        <input id="password" name="password" type="password" class="form-control" required aria-describedby="passwordHelp" aria-required="true">
                         <small id="passwordHelp" class="form-text text-muted">Password must be infinitely long and unguessable</small>
                     </div>
                     <div class="form-check">
-                        <input id="subscribe" type="checkbox" class="form-check-input">
+                        <input id="subscribe" name="subscribe" type="checkbox" class="form-check-input">
                         <label for="subscribe" class="form-check-label">Subscribe me to loads of spam emails</label>
                     </div>
 
@@ -82,20 +82,26 @@
 
                     <div class="form-group">
                         <label>Name</label> <!-- Not linked to input -->
-                        <input class="form-control"> <!-- Not defined as required -->
+
+                        <!-- No label, not defined as required, input could be better identifiable by name -->
+                        <input id="text01" name="text01" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Email address</label> <!-- Email type not used, no label, no description, not defined as required -->
-                        <input class="form-control">
+                        <label>Email address</label> <!-- Not linked to input -->
+
+                        <!-- No label, email type not used, no description, not defined as required, input could be better identifiable by name -->
+                        <input id="text02" name="text02" class="form-control">
                         <small class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
                         <label>Password</label> <!-- Not linked to input -->
-                        <input type="password" class="form-control"> <!-- No label, no description, not defined as required -->
+
+                        <!-- No label, no description, not defined as required, input could be better identifiable by name -->
+                        <input id="text03" name="text03" type="password" class="form-control">
                         <small class="form-text text-muted">Password must be infinitely long and unguessable</small>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input"> <!-- No label -->
+                        <input id="subscribe2" type="checkbox" class="form-check-input"> <!-- No label -->
                         <label class="form-check-label">Subscribe me to loads of spam emails</label> <!-- Not linked to input -->
                     </div>
 
@@ -109,7 +115,19 @@
 
         </div> <!-- /class="row" -->
 
+        <div class="row pt-5">
+            <div class="col">
+
+                <h2>Further Reading</h2>
+
+                <a href="https://developers.google.com/web/fundamentals/design-and-ux/input/forms/" target="_blank">Web Fundamentals | Google Developers - Create Amazing Forms</a>
+
+            </div>
+        </div> <!-- /class="row" -->
+
     </div>
+
+
 
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
